@@ -31,7 +31,6 @@ for i in range(pointTarget):
     x = random_sample()
     integerList.append(i)
     randomNumberList.append(x)
-    #print (i, x)
 
 plt.plot(integerList, randomNumberList, color="red", label="list", linestyle="None", marker=".")
 
@@ -48,17 +47,3 @@ plt.xlabel("i")
 plt.xlabel("Number")
 plt.legend()
 plt.show()
-
-######## Playing around -- delete for lab
-#second_plot = gdisplay(xtitle='x_i+1',
-#                       ytitle='x_i',
-#                       width=500, height=500)
-#crazy_correlations = gdots(color=color.green)
-#
-#for i in range(pointTarget-1):
-#    rate(10000)
-#    #print(randomNumberArray[i], randomNumberArray[i+1])
-#    crazy_correlations.plot( pos=(randomNumberArray[i], randomNumberArray[i+1]) )
-#
-#print (numpy.average(randomNumberArray))
-#print (numpy.var(randomNumberArray))
