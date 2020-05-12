@@ -17,41 +17,33 @@ March 17, 2020
 """
 import numpy
 import matplotlib.pyplot as plt
-
-#need this to call random number generator
 from numpy.random import random_sample
 
-npoints = 1000
+pointTarget = 1000
 
-#make pyplot plot.  If you don't have matplotlib, then comment this out
-#and just print data out to use in Excel.
-
-#Doing this one step at a time would be slow, but possible
+# Doing this one step at a time would be slow, but possible
 print("Scalar method of generating random number sequence")
 print("Uniform distribution")
 
-ilist = []
-xlist = []
-for i in range(npoints):
+integerList = []
+randomNumberList = []
+for i in range(pointTarget):
     x = random_sample()
-    ilist.append(i)
-    xlist.append(x)
+    integerList.append(i)
+    randomNumberList.append(x)
     #print (i, x)
 
-plt.plot(ilist, xlist, color="red", label="list", linestyle="None",
-         marker=".")
+plt.plot(integerList, randomNumberList, color="red", label="list", linestyle="None", marker=".")
 
-#generate sequence that is npoints long and store in an array
+# generate sequence that is pointTarget long and store in an array
 print("Array method of generating random number sequence")
 print("Uniform distribution")
 
-iarray = numpy.arange(0,npoints,1)  #array of integers
-xarray = random_sample(npoints)     #array of random numbers
+integerArray = numpy.arange(0, pointTarget, 1)
+randomNumberArray = random_sample(pointTarget)
 
-plt.plot(iarray, xarray, color="blue", label="array", linestyle="None",
-         marker="x")
+plt.plot(integerArray, randomNumberArray, color="blue", label="array", linestyle="None", marker="x")
 
-#other stuff for plot
 plt.xlabel("i")
 plt.xlabel("Number")
 plt.legend()
@@ -63,10 +55,10 @@ plt.show()
 #                       width=500, height=500)
 #crazy_correlations = gdots(color=color.green)
 #
-#for i in range(npoints-1):
+#for i in range(pointTarget-1):
 #    rate(10000)
-#    #print(xarray[i], xarray[i+1])
-#    crazy_correlations.plot( pos=(xarray[i], xarray[i+1]) )
+#    #print(randomNumberArray[i], randomNumberArray[i+1])
+#    crazy_correlations.plot( pos=(randomNumberArray[i], randomNumberArray[i+1]) )
 #
-#print (numpy.average(xarray))
-#print (numpy.var(xarray))
+#print (numpy.average(randomNumberArray))
+#print (numpy.var(randomNumberArray))
